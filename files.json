@@ -1,9 +1,14 @@
 {
   "Mathematical Methods": [
-    "MATH3303 Lecture 19.pdf"
+    "MATH3303 Lecture 19.pdf",
+    "readme.txt"
   ],
   "Specialist Mathematics": [
     "Complex Number (07_10_26).pdf",
+    "Course Schedule.txt",
     "QCE Specialist Mathematics Units 3&4 Paper 1 Question and Response Booklet 2026.pdf"
+  ],
+  "Physics": [
+    "readme.txt"
   ]
 }
