@@ -43,6 +43,29 @@
   </div>
 
   <script>
+      function render() {
+      const subjects = currentSubject === "ALL" ? SUBJECTS : [currentSubject];
+      courseTitleEl.textContent = currentSubject === "ALL" ? "" : SUBJECT_TITLES[currentSubject];
+      courseTitleEl.classList.toggle("visible", currentSubject !== "ALL");
+      pdfContainer.innerHTML = "";
+      let count = 0;
+
+      subjects.forEach(subj => {
+        const files = (data[subj] || []).filter(f => f.toLowerCase().includes(query));
+        if (!files.length) return;
+        count += files.length;
+
+        let html = `<h2>${SUBJECT_TITLES[subj] || subj}</h2><ul>`;
+        files.forEach(f => {
+          const icon = getFileIcon(f.split(".").pop());
+          const url = encodeURI(`files/${subj}/${f}`).replace(/#/g, "%23").replace(/&/g, "%26");
+          html += `<li><a href="${url}" target="_blank">${icon ? `<img class="file-icon" src="${icon}" alt="">` : ""}${f}</a></li>`;
+        });
+        pdfContainer.innerHTML += html + "</ul>";
+      });
+
+      if (!count) pdfContainer.innerHTML = `<p class="empty">No files found.</p>`;
+    }
     const PJSON_URL = "files.json";
     const SUBJECTS = ["Specialist Mathematics", "Mathematical Method"];
     const SUBJECT_TITLES = {
