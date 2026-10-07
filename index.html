@@ -56,7 +56,7 @@
         if (!files.length) return;
         count += files.length;
 
-        let html = `<h2>${SUBJECT_TITLES[subj] || subj}</h2><ul>`;
+        let html = (currentSubject === "ALL" ? `<h2>${SUBJECT_TITLES[subj] || subj}</h2>` : "") + "<ul>";
         files.forEach(f => {
           const icon = getFileIcon(f.split(".").pop());
           const url = encodeURI(`files/${subj}/${f}`).replace(/#/g, "%23").replace(/&/g, "%26");
