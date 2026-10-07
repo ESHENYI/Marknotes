@@ -4,7 +4,7 @@ BASE = "files"
 data = {}
 
 # Allowed file types
-ALLOWED_EXTENSIONS = [".pdf",",txt"]
+ALLOWED_EXTENSIONS = [".pdf",".txt"]
 
 # Scan each subject folder in /files
 for subject in os.listdir(BASE):
