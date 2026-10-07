@@ -26,6 +26,7 @@
           <li><a href="#" data-subject="ALL" class="active">All Files</a></li>
           <li><a href="#" data-subject="Specialist Mathematics">Specialist Mathematics</a></li>
           <li><a href="#" data-subject="Mathematical Methods">Mathematical Methods</a></li>
+          <li><a href="#" data-subject="Physics">Physics</a></li>
         </ul>
         <div class="toggle-wrap">
           <button id="toggle-dark" class="btn">🌙 Toggle Dark Mode</button>
@@ -67,10 +68,11 @@
       if (!count) pdfContainer.innerHTML = `<p class="empty">No files found.</p>`;
     }
     const PJSON_URL = "files.json";
-    const SUBJECTS = ["Specialist Mathematics", "Mathematical Methods"];
+    const SUBJECTS = ["Specialist Mathematics", "Mathematical Methods","Physics"];
     const SUBJECT_TITLES = {
       "Specialist Mathematics": "Specialist Mathematics",
       "Mathematical Methods": "Mathematical Methods",
+      "Physics": "Physics"
     };
 
     function getFileIcon(ext) {
